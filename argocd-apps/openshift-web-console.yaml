@@ -7,6 +7,10 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
   source:
+    helm:
+      parameters:
+        - name: text
+          value: IBM Technology Zone
     path: cluster-config/openshift-web-console
     repoURL: https://github.com/ramonvanstijn/my-gitops-stuff
     targetRevision: HEAD

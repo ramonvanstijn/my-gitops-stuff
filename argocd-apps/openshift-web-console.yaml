@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-web-console
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: cluster-config/openshift-web-console
+    repoURL: https://github.com/ramonvanstijn/my-gitops-stuff
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false

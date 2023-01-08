@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-logo
+  namespace: openshift-config
+binaryData:
+  logo.png: {{ .Files.Get "assets/ice-logo.png" | b64enc }}
